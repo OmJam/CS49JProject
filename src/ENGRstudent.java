@@ -34,8 +34,6 @@ public class ENGRstudent extends genericStudent implements assignStudent {
 
     }
 
-    @Override
-
     // IMPLEMENT A RANDOM NUM GENERATOR
     //From #'s 1001-2000 ENGR students
     public void genID() {
