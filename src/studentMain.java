@@ -103,6 +103,7 @@ public class studentMain {
             ((ENGRstudent) ENGRschool.get(i)).printInfo();
             System.out.println();
         }
+
         for (int i = 0; i < SCIschool.size(); i++) {
             ((SCIstudent) SCIschool.get(i)).printInfo();
             System.out.println();
