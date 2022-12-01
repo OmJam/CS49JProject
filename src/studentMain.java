@@ -11,23 +11,29 @@ public class studentMain {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         Scanner scnr = new Scanner(System.in);
+        Scanner file = new Scanner(System.in);
 
         int userChoice = 0;
         System.out.println("Enter Information through File or Keyboard?");
         System.out.println("(1) for File | (2) for Keyboard");
         userChoice = scan.nextInt();
+        scan.nextLine();
+
         while (userChoice != 1 && userChoice != 2) {
             System.out.println("INVALID INPUT: Type '1' for FILE and '2' for keyboard");
             userChoice = scan.nextInt();
+            scan.nextLine();
         }
         // IMPLEMENT FILES HERE
-        //USER WANTS TO ENTER INFORMATION THROUGH FILES
+        // USER WANTS TO ENTER INFORMATION THROUGH FILES
         if (userChoice == 1) {
+
             System.out.println("ENTER FILE NAME: ");
-            String fileName = scnr.next();
+            String fileName = file.nextLine();
+            System.out.println("FILE " + fileName);
             System.out.println("What School are these Students from? (1) for ENGR, (2) for SCI");
-            int studentMajor = scan.nextInt();
-            //ENGR STUDENT ADD THROUGH FILES
+            int studentMajor = scnr.nextInt();
+            // ENGR STUDENT ADD THROUGH FILES
             if (studentMajor == 1) {
                 try {
                     Scanner fileScan = new Scanner(new File(fileName));
@@ -47,7 +53,7 @@ public class studentMain {
                 }
 
             }
-            //SCI Student add through files
+            // SCI Student add through files
             if (studentMajor == 2) {
                 try {
                     Scanner fileScan = new Scanner(new File(fileName));
@@ -55,9 +61,7 @@ public class studentMain {
                     int age;
                     while (fileScan.hasNextLine()) {
                         name = fileScan.next();
-                        System.out.println(name);
                         age = fileScan.nextInt();
-                        System.out.println(age);
                         SCIstudent student = new SCIstudent(name, age);
                         SCIschool.add(student);
                     }
@@ -68,7 +72,7 @@ public class studentMain {
 
             }
         }
-        //USER WANTS TO ENTER THROUGH KEYBOARD
+        // USER WANTS TO ENTER THROUGH KEYBOARD
         if (userChoice == 2) {
             int userStop = 1;
             System.out.println(
@@ -98,12 +102,11 @@ public class studentMain {
             scnr.close();
         }
 
-        //PRINTING STUDENT INFO HERE
+        // PRINTING STUDENT INFO HERE
         for (int i = 0; i < ENGRschool.size(); i++) {
             ((ENGRstudent) ENGRschool.get(i)).printInfo();
             System.out.println();
         }
-
         for (int i = 0; i < SCIschool.size(); i++) {
             ((SCIstudent) SCIschool.get(i)).printInfo();
             System.out.println();

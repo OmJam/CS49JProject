@@ -22,7 +22,6 @@ public class SCIstudent extends genericStudent implements assignStudent {
     public ArrayList<String> generateSchedule() {
         schedule = new ArrayList<String>();
         ArrayList<String> SCIclass = new ArrayList<String>();
-
         SCIclass.add("Calculus-1");
         SCIclass.add("PHYSICS-50");
         SCIclass.add("Biology-1");
@@ -98,9 +97,9 @@ public class SCIstudent extends genericStudent implements assignStudent {
     @Override
     public void printInfo() {
         // TODO Auto-generated method stub
-        System.out.print("| NAME: " + name + " | Age: " + age + " | ID: " + ID);
+        System.out.println("| NAME: " + name + " | Age: " + age + " | ID: " + ID);
         // System.out.printf(" GPA: %.2f\n", GPA);
-        System.out.println(" SCHDEULE: ");
+        System.out.print(" | SCHDEULE: ");
         for (int i = 0; i < schedule.size(); i++) {
             System.out.print(schedule.get(i) + " | ");
         }

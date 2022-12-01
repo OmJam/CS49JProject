@@ -12,7 +12,7 @@ public class ENGRstudent extends genericStudent implements assignStudent {
         genID();
         generateSchedule();
         this.name = n;
-        a = age;
+        age = a;
 
     }
 
@@ -50,6 +50,10 @@ public class ENGRstudent extends genericStudent implements assignStudent {
     public static void genIDProf(){
         int random = (int) (Math.random() * (8000-7001) + 1001);
         ID = randomProf;
+    }
+
+    public static void genIDENGR() {
+        int random = (int) (Math.random() * (8000 - 7001) + 7001);
     }
 
     public int getID() {
@@ -101,9 +105,9 @@ public class ENGRstudent extends genericStudent implements assignStudent {
     @Override
     public void printInfo() {
         // TODO Auto-generated method stub
-        System.out.print("| NAME: " + name + " | Age: " + age + " | ID: " + ID);
+        System.out.println("| NAME: " + name + " | Age: " + age + " | ID: " + ID);
         // System.out.printf(" | GPA: %.2f\n", GPA);
-        System.out.println(" SCHDEULE: | ");
+        System.out.print("| SCHDEULE: | ");
         for (int i = 0; i < schedule.size(); i++) {
             System.out.print(schedule.get(i) + " | ");
         }
