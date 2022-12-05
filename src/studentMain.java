@@ -5,8 +5,8 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class studentMain {
-    static LinkedList<assignStudent> ENGRschool = new LinkedList<assignStudent>();
-    static ArrayList<assignStudent> SCIschool = new ArrayList<assignStudent>();
+    public static LinkedList<assignStudent> ENGRschool = new LinkedList<assignStudent>();
+    public static ArrayList<assignStudent> SCIschool = new ArrayList<assignStudent>();
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);

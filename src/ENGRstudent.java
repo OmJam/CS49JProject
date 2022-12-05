@@ -16,6 +16,18 @@ public class ENGRstudent extends genericStudent implements assignStudent {
 
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public ArrayList<String> getSchedule() {
+        return schedule;
+    }
+
     @Override
     // HAVE AND ARRAYLIST OF Predetermined Classes and randomly choose 3
     // To generate
