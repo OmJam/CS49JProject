@@ -3,6 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Stack;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,6 +15,8 @@ public class studentGUI implements ActionListener {
 
     public static LinkedList<assignStudent> ENGRschool = new LinkedList<assignStudent>();
     public static ArrayList<assignStudent> SCIschool = new ArrayList<assignStudent>();
+    public static Stack<assignStudent> BIOschool = new Stack<assignStudent>();
+    public static ArrayList<assignStudent> Professor = new ArrayList<assignStudent>();
 
     static JFrame frame = new JFrame();
     static JButton enterButton = new JButton("ENTER");
@@ -72,30 +75,28 @@ public class studentGUI implements ActionListener {
                         userNameField.setText("");
                         userAgeField.setText("");
                         userSchoolField.setText("");
-                    }
-                    else if (userSchoolField.getText().toLowerCase().equals("biology")) {
+
+                    } else if (userSchoolField.getText().toLowerCase().equals("biology")) {
                         String studentName = userNameField.getText();
                         int studentAge = Integer.parseInt(userAgeField.getText());
 
                         BIOstudent create = new BIOstudent(studentName, studentAge);
                         create.printInfo();
-                        BIOschool.add(create);
+                        BIOschool.push(create);
                         userNameField.setText("");
                         userAgeField.setText("");
                         userSchoolField.setText("");
-                    }
-                    else if (userSchoolField.getText().toLowerCase().equals("professor")) {
+                    } else if (userSchoolField.getText().toLowerCase().equals("professor")) {
                         String studentName = userNameField.getText();
                         int studentAge = Integer.parseInt(userAgeField.getText());
 
-                        Professor create = new SCIstudent(studentName, studentAge);
+                        Professor create = new Professor(studentName, studentAge);
                         create.printInfo();
                         Professor.add(create);
                         userNameField.setText("");
                         userAgeField.setText("");
                         userSchoolField.setText("");
-                    }
-                    else {
+                    } else {
                         JOptionPane.showMessageDialog(null, "Enter a valid school", "INVALID", //
                                 JOptionPane.PLAIN_MESSAGE);
 

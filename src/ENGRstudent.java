@@ -53,14 +53,15 @@ public class ENGRstudent extends genericStudent implements assignStudent {
 
     @Override
 
-    // Uses id from Professor file
+    // IMPLEMENT A RANDOM NUM GENERATOR
+    // From #'s 1001-2000 ENGR students
     public void genID() {
         int random = (int) (Math.random() * (2000 - 1001) + 1001);
-        ID = randomENGR;
+        ID = random;
     }
 
-    public static int genIDENGR() {
-        int random = (int) (Math.random() * (2000 - 1001) + 1001;
+    public static int genID_ENGR() {
+        int random = (int) (Math.random() * (2000 - 1001) + 1001);
         return random;
     }
 
@@ -123,6 +124,5 @@ public class ENGRstudent extends genericStudent implements assignStudent {
         System.out.println();
 
     }
-
 
 }

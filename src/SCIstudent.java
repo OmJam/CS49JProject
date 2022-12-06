@@ -16,6 +16,18 @@ public class SCIstudent extends genericStudent implements assignStudent {
 
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public ArrayList<String> getSchedule() {
+        return schedule;
+    }
+
     @Override
     // HAVE AND ARRAYLIST OF Predetermined Classes and randomly choose 3
     // To generate
@@ -45,7 +57,7 @@ public class SCIstudent extends genericStudent implements assignStudent {
     // IMPLEMENT A RANDOM NUM GENERATOR
 
     public void genID() {
-        int random = (int) (Math.random() * (3000 - 2001) + 2001);
+        int random = ENGRstudent.genID_ENGR() + 1000;
         ID = random;
     }
 

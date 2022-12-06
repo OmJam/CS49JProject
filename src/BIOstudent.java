@@ -3,14 +3,29 @@ import java.util.ArrayList;
 public class BIOstudent extends genericStudent implements assignStudent {
     private String name;
     private int ID;
+    private int age;
     private ArrayList<String> schedule;
     private double GPA;
 
-    public BIOstudent(String n, int a) {
-        genID();
-        generateSchedule();
+    // CHANGE
+    public BIOstudent(String n, int age) {
         this.name = n;
-        age = a;
+        this.age = age;
+        generateSchedule();
+        genID();
+
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
@@ -22,9 +37,9 @@ public class BIOstudent extends genericStudent implements assignStudent {
 
         BIOclass.add("Pre-Calculus 2");
         BIOclass.add("ENGL 101A");
-       //BIOclass.add("PHYSICS-50");
+        // BIOclass.add("PHYSICS-50");
         BIOclass.add("Intro to Biology");
-        //BIOclass.add("BIOineering Statistics");
+        // BIOclass.add("BIOineering Statistics");
         BIOclass.add("Modern Biology");
 
         for (int i = 0; i < 3; i++) {
@@ -37,16 +52,17 @@ public class BIOstudent extends genericStudent implements assignStudent {
     }
 
     // IMPLEMENT A RANDOM NUM GENERATOR
-    //From #'s 3000-2001 BIO students
+    // From #'s 3000-2001 BIO students
     public void genID() {
-        int random = ENRstudent.genIDENGR() + 2000;
+
+        int random = ENGRstudent.genID_ENGR() + 2000;// generate from 1001-2000
+
         ID = random;
     }
 
     @Override
     public void calcGPA() {
-        for(int i = 0 ; i < 3 ; i++)
-        {
+        for (int i = 0; i < 3; i++) {
             System.out.println("ENTER GRADE FOR CLASS ");
         }
 
@@ -55,7 +71,7 @@ public class BIOstudent extends genericStudent implements assignStudent {
     @Override
     public void printInfo() {
         // TODO Auto-generated method stub
-        System.out.println("NAME: " + name + "GPA: " + GPA);
+        System.out.println("NAME: " + name + " GPA: " + GPA);
         System.out.println("SCHDEULE: ");
         for (int i = 0; i < schedule.size(); i++) {
             System.out.print(schedule.get(i) + " | ");
@@ -63,6 +79,5 @@ public class BIOstudent extends genericStudent implements assignStudent {
         System.out.println();
 
     }
-
 
 }
