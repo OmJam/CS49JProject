@@ -64,21 +64,21 @@ public class Professor extends genericStudent implements assignStudent {
         ID = random;
     }
 
-    public String teach(int classes) {
-        if (classes <= 0) {
-            return "Done teaching for the day";
-        } else {
-            return teach(classes - 1);
-        }
-    }
+//    public String teach(int classes) {
+//        if (classes <= 0) {
+//            return "Done teaching for the day";
+//        } else {
+//            return teach(classes - 1);
+//        }
+//    }
 
     public static int day(int classes) {
-        int teachclass = 3;
+
         if (classes == 0) {
-            System.out.println("Done for Day 0");
+            System.out.println("Classes left to teach:");
             return 0;
         }
-        System.out.println("Teach class: " + classes);
+        System.out.println("Number of classes to teach: " + classes);
         return day(classes - 1);
     }
 
@@ -98,13 +98,15 @@ public class Professor extends genericStudent implements assignStudent {
     @Override
     public void printInfo() {
         // TODO Auto-generated method stub
-        System.out.println("NAME: " + name + "Professor ID: " + ID);
-        System.out.println("SCHDEULE: ");
+        System.out.println("| NAME: " + name + " | Age: " + age + " | Professor ID: " + ID);
+        System.out.println("Day of Instruction: ");
+        System.out.print("| SCHDEULE: | ");
         for (int i = 0; i < schedule.size(); i++) {
-            System.out.println(schedule.get(i) + " | ");
+            System.out.print(schedule.get(i) + " | ");
         }
-        System.out.println("Day of a Professor: " + this.day(3));
+
         System.out.println();
+        System.out.print(this.day(3));
 
     }
 

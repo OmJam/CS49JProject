@@ -111,7 +111,7 @@ public class SCIstudent extends genericStudent implements assignStudent {
         // TODO Auto-generated method stub
         System.out.println("| NAME: " + name + " | Age: " + age + " | ID: " + ID);
         // System.out.printf(" GPA: %.2f\n", GPA);
-        System.out.print(" | SCHDEULE: ");
+        System.out.print("| SCHDEULE: ");
         for (int i = 0; i < schedule.size(); i++) {
             System.out.print(schedule.get(i) + " | ");
         }

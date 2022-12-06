@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class BIOstudent extends genericStudent implements assignStudent {
     private String name;
@@ -37,9 +38,9 @@ public class BIOstudent extends genericStudent implements assignStudent {
 
         BIOclass.add("Pre-Calculus 2");
         BIOclass.add("ENGL 101A");
-        // BIOclass.add("PHYSICS-50");
+        BIOclass.add("Advanced Biology");
         BIOclass.add("Intro to Biology");
-        // BIOclass.add("BIOineering Statistics");
+        BIOclass.add("Disease Case Lab");
         BIOclass.add("Modern Biology");
 
         for (int i = 0; i < 3; i++) {
@@ -60,19 +61,52 @@ public class BIOstudent extends genericStudent implements assignStudent {
         ID = random;
     }
 
-    @Override
     public void calcGPA() {
-        for (int i = 0; i < 3; i++) {
-            System.out.println("ENTER GRADE FOR CLASS ");
-        }
+        Scanner scan = new Scanner(System.in);
+        int userCorrect = 1;
+        double grade1 = 0;
+        double finalGPA = 0;
+        do {
+            try {
+                for (int i = 1; i <= 3; i++) {
+                    System.out.println("ENTER GRADE FOR CLASS #" + i);
+                    grade1 = scan.nextDouble();
+                    finalGPA += convertGPA(grade1);
+                }
+                userCorrect = 2;
+            } catch (Exception e) {
+                System.out.println("INVALID INPUT: Enter a NUMBER grade for Class!");
+                scan.next();
+                finalGPA = 0;
+            }
+            continue;
+        } while (userCorrect == 1);
 
+        finalGPA /= 3;
+        GPA = finalGPA;
+        scan.close();
+        System.out.printf("GPA: %.2f\n", GPA);
+    }
+
+    public static int convertGPA(double grade) {
+
+        if (grade < 60) {
+            return 0;
+        } else if (grade >= 60 && grade < 70) {
+            return 1;
+        } else if (grade >= 70 && grade < 80) {
+            return 2;
+        } else if (grade >= 80 && grade < 90) {
+            return 3;
+        }
+        return 4;
     }
 
     @Override
     public void printInfo() {
         // TODO Auto-generated method stub
-        System.out.println("NAME: " + name + " GPA: " + GPA);
-        System.out.println("SCHDEULE: ");
+        System.out.println("| NAME: " + name + " | Age: " + age + " | ID: " + ID);
+        System.out.print("| SCHDEULE: | ");
         for (int i = 0; i < schedule.size(); i++) {
             System.out.print(schedule.get(i) + " | ");
         }
