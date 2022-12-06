@@ -55,17 +55,13 @@ public class ENGRstudent extends genericStudent implements assignStudent {
 
     // Uses id from Professor file
     public void genID() {
-   //     int random = (int) (Math.random() * (2000 - 1001) + 1001);
+        int random = (int) (Math.random() * (2000 - 1001) + 1001);
         ID = randomENGR;
     }
 
-    public static void genIDProf(){
-        int random = (int) (Math.random() * (8000-7001) + 1001);
-        ID = randomProf;
-    }
-
-    public static void genIDENGR() {
-        int random = (int) (Math.random() * (8000 - 7001) + 7001);
+    public static int genIDENGR() {
+        int random = (int) (Math.random() * (2000 - 1001) + 1001;
+        return random;
     }
 
     public int getID() {

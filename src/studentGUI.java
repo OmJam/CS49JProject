@@ -72,8 +72,30 @@ public class studentGUI implements ActionListener {
                         userNameField.setText("");
                         userAgeField.setText("");
                         userSchoolField.setText("");
+                    }
+                    else if (userSchoolField.getText().toLowerCase().equals("biology")) {
+                        String studentName = userNameField.getText();
+                        int studentAge = Integer.parseInt(userAgeField.getText());
 
-                    } else {
+                        BIOstudent create = new BIOstudent(studentName, studentAge);
+                        create.printInfo();
+                        BIOschool.add(create);
+                        userNameField.setText("");
+                        userAgeField.setText("");
+                        userSchoolField.setText("");
+                    }
+                    else if (userSchoolField.getText().toLowerCase().equals("professor")) {
+                        String studentName = userNameField.getText();
+                        int studentAge = Integer.parseInt(userAgeField.getText());
+
+                        Professor create = new SCIstudent(studentName, studentAge);
+                        create.printInfo();
+                        Professor.add(create);
+                        userNameField.setText("");
+                        userAgeField.setText("");
+                        userSchoolField.setText("");
+                    }
+                    else {
                         JOptionPane.showMessageDialog(null, "Enter a valid school", "INVALID", //
                                 JOptionPane.PLAIN_MESSAGE);
 

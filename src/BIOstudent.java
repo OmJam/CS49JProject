@@ -6,9 +6,11 @@ public class BIOstudent extends genericStudent implements assignStudent {
     private ArrayList<String> schedule;
     private double GPA;
 
-    public BIOstudent(String n) {
+    public BIOstudent(String n, int a) {
+        genID();
+        generateSchedule();
         this.name = n;
-
+        age = a;
     }
 
     @Override
@@ -37,7 +39,7 @@ public class BIOstudent extends genericStudent implements assignStudent {
     // IMPLEMENT A RANDOM NUM GENERATOR
     //From #'s 3000-2001 BIO students
     public void genID() {
-        int random = (int) (Math.random() * (3000-2001) + 1001);
+        int random = ENRstudent.genIDENGR() + 2000;
         ID = random;
     }
 

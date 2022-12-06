@@ -6,8 +6,11 @@ public class Professor extends genericStudent implements assignStudent {
     private ArrayList<String> schedule;
     private double GPA;
 
-    public Professor(String n) {
+    public Professor(String n, int a) {
+        genID();
+        generateSchedule();
         this.name = n;
+        age = a;
 
     }
 
@@ -33,19 +36,25 @@ public class Professor extends genericStudent implements assignStudent {
         return schedule;
 
     }
-    int classes = 3;
-    public void teach(int classes){
-        if (classes <= 0) {
-            return "Done teaching for the day";
+
+
+    public static int day(int classes) {
+        int teachclass = 3;
+        if (classes > 0) {
+            System.out.println("Teach class" + classes);
+            return day(classes - 1);
         } else {
-            return teach(classes - 1);
+            System.out.println("Classes to teach: ");
+            return 0;
         }
+        int taught = day(teachclass);
     }
+
 
     // Uses id from engrstudent file
     public void genID() {
-     //   int random = (int) (Math.random() * (8000-7001) + 1001);
-        ID = randomProf;
+        int random = BIOstudent.genID;
+        ID = randomProf + 1000;
     }
 
     //ID for ENGRstudent
@@ -70,6 +79,7 @@ public class Professor extends genericStudent implements assignStudent {
         for (int i = 0; i < schedule.size(); i++) {
             System.out.print(schedule.get(i) + " | ");
         }
+        System.out.println("Day of a Professor" + int taught);
         System.out.println();
 
     }

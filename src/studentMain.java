@@ -71,6 +71,40 @@ public class studentMain {
                 }
 
             }
+            if (studentMajor == 3) {
+                try {
+                    Scanner fileScan = new Scanner(new File(fileName));
+                    String name;
+                    int age;
+                    while (fileScan.hasNextLine()) {
+                        name = fileScan.next();
+                        age = fileScan.nextInt();
+                        BIOstudent student = new BIOstudent(name, age);
+                        BIOschool.add(student);
+                    }
+                    fileScan.close();
+                } catch (FileNotFoundException except) {
+                    System.out.println("Error in opening input file " + except.getMessage());
+                }
+
+            }
+            if (studentMajor == 4 {
+                try {
+                    Scanner fileScan = new Scanner(new File(fileName));
+                    String name;
+                    int age;
+                    while (fileScan.hasNextLine()) {
+                        name = fileScan.next();
+                        age = fileScan.nextInt();
+                        Professor student = new Professor(name, age);
+                        Professor.add(student);
+                    }
+                    fileScan.close();
+                } catch (FileNotFoundException except) {
+                    System.out.println("Error in opening input file " + except.getMessage());
+                }
+
+            }
         }
         // USER WANTS TO ENTER THROUGH KEYBOARD
         if (userChoice == 2) {
@@ -109,6 +143,14 @@ public class studentMain {
         }
         for (int i = 0; i < SCIschool.size(); i++) {
             ((SCIstudent) SCIschool.get(i)).printInfo();
+            System.out.println();
+        }
+        for (int i = 0; i < BIOschool.size(); i++) {
+            ((BIOstudent) BIOschool.get(i)).printInfo();
+            System.out.println();
+        }
+        for (int i = 0; i < Professor.size(); i++) {
+            ((Professor) Professor.get(i)).printInfo();
             System.out.println();
         }
 
