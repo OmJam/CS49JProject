@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.Stack;
 
+//Main program
 public class studentMain {
     public static LinkedList<assignStudent> ENGRschool = new LinkedList<assignStudent>();
     public static ArrayList<assignStudent> SCIschool = new ArrayList<assignStudent>();
