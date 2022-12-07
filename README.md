@@ -10,7 +10,7 @@
 How to run this program: Our project is a college enrollment program where you will put your name, age, and department/school. This will then generate the person an ID and schedule. All you need for this program to run is a computer with Java and download JDK. The JDK version we used was version 18. Then open the code in any IDE, we use Eclipse and Intellij. Once you see all the files run the java file named studentMain.java. In the console you will be asked how you want to interact with the program to input information. The options are from reading a file, type out the information, or if you want to use the GUI. From there you will input all the information of the person and once you finish you will be asked if you want to add another person. Once you are finished adding people to the school you will see the output in the console and ask if you want to output the results in a file. Finally, the program ends.
 
 
-4) Classes
+3) Classes
    1) assignStudent.java: Interface class. Used 
     to implement generateSchedule() and genID().
    2) genericStudent.java: Abstract class. Basic student class
