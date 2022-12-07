@@ -1,7 +1,7 @@
 # CS49JProject
 1) GITHUB LINK:
    https://github.com/OmJam/CS49JProject
-2) HTTPS CLONE: https://github.com/OmJam/CS49JProject.git
+   a) HTTPS CLONE: https://github.com/OmJam/CS49JProject.git
 
 
 2) Presentation Link:https://docs.google.com/presentation/d/1AqsaOF7WIXUwbvyL8uch3PyS-pL5vFLUgpUPNa5SjNs/edit?usp=sharing
