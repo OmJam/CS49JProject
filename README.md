@@ -20,8 +20,24 @@
         1) Science student Object
         2) Same private variables and methods as Engineering Student
    5) BIOstudent.java
-   
+      1)Biology student object
+      2)Private variables name, age, ID, schedule, and GPA
+      3)Methods: getter methods for all private variables, BIOstudent takes input name and age, gets them and then calls the function generateSchedule which will make         a 3 class schedule, and also has the function genID which uses random to create an ID for the student.
+      4)Simple getter methods: getAge(), getID(), getName() 
+      5)Function, ArrayList<String> generateSchedule(): This function uses ArrayList which will contain 5 classes that we add, then we enter a for loop which will           randomly pick 3 of the 5 classes and then return that 3 class schedule. 
+      6)genID() : creates an ID for Biology students using the randomly generated ID from the ENGRstudent.java class.
+      7)printInfo() : prints name, age, ID, and schedule.
+
    6) Professor.java
+      1)Professor object
+      2)Private variables name, age, ID, schedule, and GPA
+      3)Methods: getter methods for all private variables, Professor takes input name and age, gets them and then calls the function generateSchedule which will make a 3       class schedule, and also has the function genID which uses random to create an ID for the student.
+      4)Simple getter methods: getAge(), getID(), getName() 
+      5)Function, ArrayList<String> generateSchedule(): This function uses ArrayList which will contain 5 classes that we add, then we enter a for loop which will             randomly pick 3 of the 5 classes and then return that 3 class schedule. 
+      6)genID() : creates an ID for Professors using the randomly generated ID from the ENGRstudent.java class.
+      7)day(int classes) : This is a recursion function that will tell the Professor how many classes he needs to teach after he completes one lecture. 
+      8)printInfo() : prints name, age, ID, and schedule.
+
    
    7) studentMain.java
       1) Main Program
